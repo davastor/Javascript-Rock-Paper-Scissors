@@ -1,7 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head> <meta charset="UTF-8">
-            <link rel="stylesheet" href="styles.css">
+    <head> 
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="script.js"></script>
+        <title>Rock, Paper, Scissors!</title>
     </head>
 
+    <body>
+      <h1>Rock, Paper, or Scissors?  Make your choice!</h1>
+
+      <div style="padding: 10px">
+        <button id="rockBtn">Rock</button>
+        <button id="paperBtn">Paper</button>
+        <button id="scissBtn">Scissors</button>
+      </div>
+      <div style="text-align:center">
+        <div class="playerChoiceText"></div>
+        <div class="result"></div>
+        <div class="round"></div>
+        <div class="playerWins"></div>
+        <div class="computerWins"></div>
+        <div class="ties"></div>
+      </div>
+      
+     
+    </body>
+
+    <script>
+
+        let rockBtn = document.getElementById("rockBtn");
+        let paperBtn = document.getElementById("paperBtn");
+        let scissBtn = document.getElementById("scissBtn");
+        let playerChoiceText = document.querySelector(".playerChoiceText");
+        let result = document.querySelector(".result");
+        let round = document.querySelector(".round");
+        let playerWins = document.querySelector(".playerWins");
+        let computerWins = document.querySelector(".computerWins");
+        let ties = document.querySelector(".ties");
+        let roundCount = 0;
+        let winCount = 0;
+        let lossCount = 0;
+        let tieCount = 0;
+
+        rockBtn.addEventListener("click", (event) => {game('rock', playerChoiceText, result, round, playerWins, computerWins, roundCount, winCount, lossCount, tieCount, ties);});
+        paperBtn.addEventListener("click", (event) => {game('paper', playerChoiceText, result, round, playerWins, computerWins, roundCount, winCount, lossCount, tieCount, ties);});
+        scissBtn.addEventListener("click", (event) => {game('scissors', playerChoiceText, result, round, playerWins, computerWins, roundCount, winCount, lossCount, tieCount, ties);});
+    </script>
 </html>
