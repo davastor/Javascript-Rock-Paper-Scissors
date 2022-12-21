@@ -3,7 +3,7 @@
     <head> 
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
-        <script type="text/javascript" src="script.js"></script>
+        
         <title>Rock, Paper, Scissors!</title>
     </head>
 
@@ -16,35 +16,16 @@
         <button id="scissBtn">Scissors</button>
       </div>
       <div style="text-align:center">
-        <div class="playerChoiceText"></div>
-        <div class="result"></div>
-        <div class="round"></div>
-        <div class="playerWins"></div>
-        <div class="computerWins"></div>
-        <div class="ties"></div>
+        <div id="playerChoiceText"></div>
+        <div id="result"></div>
+        <div id="round"></div>
+        <div id="playerWins"></div>
+        <div id="computerWins"></div>
+        <div id="ties"></div>
       </div>
       
-     
+    <script type="text/javascript" src="script.js"></script>
     </body>
 
-    <script>
 
-        let rockBtn = document.getElementById("rockBtn");
-        let paperBtn = document.getElementById("paperBtn");
-        let scissBtn = document.getElementById("scissBtn");
-        let playerChoiceText = document.querySelector(".playerChoiceText");
-        let result = document.querySelector(".result");
-        let round = document.querySelector(".round");
-        let playerWins = document.querySelector(".playerWins");
-        let computerWins = document.querySelector(".computerWins");
-        let ties = document.querySelector(".ties");
-        let roundCount = 0;
-        let winCount = 0;
-        let lossCount = 0;
-        let tieCount = 0;
-
-        rockBtn.addEventListener("click", (event) => {game('rock', playerChoiceText, result, round, playerWins, computerWins, roundCount, winCount, lossCount, tieCount, ties);});
-        paperBtn.addEventListener("click", (event) => {game('paper', playerChoiceText, result, round, playerWins, computerWins, roundCount, winCount, lossCount, tieCount, ties);});
-        scissBtn.addEventListener("click", (event) => {game('scissors', playerChoiceText, result, round, playerWins, computerWins, roundCount, winCount, lossCount, tieCount, ties);});
-    </script>
 </html>

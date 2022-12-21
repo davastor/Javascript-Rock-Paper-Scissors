@@ -1,10 +1,28 @@
+
+let rockBtn = document.getElementById('rockBtn');
+let scissBtn = document.getElementById("scissBtn");
+let playerChoiceText = document.getElementById("playerChoiceText");
+let result = document.getElementById("result");
+let round = document.getElementById("round");
+let playerWins = document.getElementById("playerWins");
+let computerWins = document.getElementById("computerWins");
+let ties = document.getElementById("ties");
+let roundCount = 0;
+let winCount = 0;
+let lossCount = 0;
+let tieCount = 0;
+
+rockBtn.addEventListener("click", (event) => {game('rock');});
+paperBtn.addEventListener("click", (event) => {game('paper');});
+scissBtn.addEventListener("click", (event) => {game('scissors');});
+
 function getComputerChoice(){
     let choices = ['rock', 'paper', 'scissors'];
     return choices[Math.floor(Math.random()*3)];
 
  }
 
-function playOneRound(playerChoice, computerChoice, playerChoiceText, result){
+function playOneRound(playerChoice, computerChoice){
 
     if(playerChoice == 'rock' && computerChoice == 'scissors'){
         return 'won';
@@ -30,9 +48,9 @@ function playOneRound(playerChoice, computerChoice, playerChoiceText, result){
     
 }
 
-function game(playerChoice, playerChoiceText, result, round, playerWins, computerWins, $roundCount, $winCount, $lossCount, $tieCount, ties){
+function game(playerChoice){
     let computerChoice = getComputerChoice();
-    let roundResult = playOneRound(playerChoice, computerChoice, playerChoiceText, result);;
+    let roundResult = playOneRound(playerChoice, computerChoice);
     roundCount++;
 
     playerChoiceText.textContent = `You chose ${playerChoice}.`;
